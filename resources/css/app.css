@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+    scroll-behavior: smooth;
+}
+button.bg-accent {
+    background-color: #3498db; /* Warna highlight */
+    color: #ffffff; /* Warna teks highlight */
+    font-weight: bold;
+    transform: scale(1.05); /* Sedikit membesar */
+    border: 2px solid #ffffff; /* Menambahkan garis tepi */
+    transition: transform 0.3s, background-color 0.3s, border 0.3s;
+}
+/* Default button styles */
+.nav-button {
+    position: relative; /* Untuk elemen pseudo */
+    overflow: hidden; /* Agar garis tidak keluar dari area tombol */
+}
+
+/* Garis bawah dengan pseudo-element */
+.nav-button::after {
+    content: ''; /* Elemen kosong */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px; /* Ketebalan garis */
+    width: 60%; /* Awalnya tidak terlihat */
+    background-color: #ffffff; /* Warna garis */
+    transition: width 0.3s ease-out; /* Efek animasi */
+}
+
+/* Hover effect: garis bergerak ke kanan */
+.nav-button:hover::after {
+    width: 100%; /* Garis meluas sepenuhnya */
+    
+}
+
+
+
